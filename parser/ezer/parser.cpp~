@@ -21,17 +21,6 @@ using namespace std;
 // ** Need syntaxerror1 and syntaxerror2 functions (each takes 2 args)
 //    to display syntax error messages as specified by me.  
 
-// token types from the scanner
-enum token_type {};
-
-// global buffer for the token the 
-// scanner returned
-token_type save_token;
-
-// global flag indicating whether
-// we have saved a token to eat up or not
-bool token_available;
-
 // Type of error: **
 // Done by: ** 
 void syntaxerror1(  ){    }
@@ -42,12 +31,7 @@ void syntaxerror2(  ) {    }
 // ** Need the updated match and next_token with 2 global vars
 // saved_token and saved_lexeme
 
-// Purpose: Looks ahead to see what token comes next from the scanner.
-// HOW: checks first to see if the token_available flag is false.
-// if so, saved_token gets scanner() result.
-// and the flag is set true.
-// A token is grabbed but is not eaten up.
-// Returns the save_token
+// Purpose: **
 // Done by: **
 token_type next_token()
 {
@@ -69,10 +53,7 @@ token_type next_token()
 
 
 
-// Purpose: Checks and eats up the expected token
-// HOW: check to see if expected is different from next_token()
-// and if so, generates a syntax error and handles the error
-// else token_available become false (eat up) and return true.
+// Purpose: **
 // Done by: **
 boolean match(tokentype expected) 
 {
