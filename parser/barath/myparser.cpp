@@ -471,6 +471,9 @@ void syntaxerror2(  ) {    }
 // A token is grabbed but is not eaten up.
 // Returns the save_token
 // Done by: **
+
+
+///--------------------------Barath's Function----------------------------
 token_type next_token()
 {
 	string saved_lexeme;
@@ -487,7 +490,7 @@ token_type next_token()
 	return saved_token; // return the saved token
 }
 
-
+//-----------------------------------------------------------------------------
 
 
 
@@ -535,6 +538,9 @@ int main()
   cout << "Enter the input file name: ";
   cin >> filename;
   fin.open(filename.c_str());
+
+  next_token();
+
 
   //** calls the <story> to start parsing
   //** closes the input file 
