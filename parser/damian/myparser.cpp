@@ -454,12 +454,22 @@ token_type save_token;
 // we have saved a token to eat up or not
 bool token_available;
 
-// Type of error: **
+// Type of error: ** match fails
+// Done by: ** Damian
+void syntaxerror1(string lexeme , token_type savedT)
+{
+
+  cout << "SYNTAX ERROR: expected " << savedT << " but found " << lexeme << "!" ;
+  exit(1);
+
+}
+// Type of error: ** swwitch default
 // Done by: ** 
-void syntaxerror1(  ){    }
-// Type of error: **
-// Done by: ** 
-void syntaxerror2(  ) {    }
+void syntaxerror2(string lexeme , tokentype expec) 
+{ 
+  cout << "SYNTAX ERROR: unexpected " << lexeme << " found in " << expec << "!" ;
+  exit(1);  
+}
 
 // ** Need the updated match and next_token with 2 global vars
 // saved_token and saved_lexeme
@@ -503,7 +513,7 @@ boolean match(tokentype expected)
 	{
 		// calls a syntax error function here to generate 
 		// a syntax error message here and do recovery
-		syntax_error2(saved_lexeme)
+	  syntax_error2(saved_lexeme,expected);
 	}
 	else // match has occurred
 	{
