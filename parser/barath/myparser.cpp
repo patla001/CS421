@@ -474,6 +474,7 @@ void syntaxerror2(  ) {    }
 
 
 ///--------------------------Barath's Function----------------------------
+// -----------------------Change 2-----------------------------------
 token_type next_token()
 {
 	string saved_lexeme;
