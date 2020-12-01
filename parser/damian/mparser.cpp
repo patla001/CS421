@@ -1,7 +1,7 @@
 #include<iostream>
 #include<fstream>
 #include<string>
-#include "group27scanner.h"
+#include "scanner.h"
 
 using namespace std;
 
@@ -31,17 +31,17 @@ string tokenName[16] = {"VERB","VERBNEG","VERBPAST", "VERBPASTNEG", "IS", "WAS",
 
 // token types from the scanner
 //enum token_type {};
-enum tokenType {VERB, VERBNEG, VERBPAST, VERBPASTNEG, IS, WAS, OBJECT, SUBJECT, DESTINATION, PRONOUN, CONNECTOR, WORD1, WORD2, PERIOD, ERROR, EOFM };
+//enum tokenType {VERB, VERBNEG, VERBPAST, VERBPASTNEG, IS, WAS, OBJECT, SUBJECT, DESTINATION, PRONOUN, CONNECTOR, WORD1, WORD2, PERIOD, ERROR, EOFM };
 // global buffer for the token the 
 // scanner returned
-tokenType save_token;
-
+tokenType saved_token;
+string saved_lexeme;
 // global flag indicating whether
 // we have saved a token to eat up or not
 bool token_available;
 
 
-void syntaxerror1(string lexeme , tokenType savedT)
+void syntax_error1(string lexeme , tokenType savedT)
 {
 
   cout << "SYNTAX ERROR: expected " << tokenName[savedT] << " but found " << lexeme << "!" << endl ;
@@ -51,7 +51,7 @@ void syntaxerror1(string lexeme , tokenType savedT)
 }
 // Type of error: ** swwitch default
 // // Done by: ** 
-void syntaxerror2(string expec, string lexeme )
+void syntax_error2(string expec, string lexeme )
 {
     cout << "SYNTAX ERROR: unexpected " << lexeme << " found in " << expec << "!" ;
     cout << "Terminate the Program" << endl;
@@ -105,14 +105,14 @@ tokenType next_token()
 // and if so, generates a syntax error and handles the error
 // else token_available become false (eat up) and return true.
 // Done by: **
-boolean match(tokentype expected) 
+bool match(tokenType expected) 
 {
 
 	if (next_token() != expected) // mismatch has occurred with the next token
 	{
 		// calls a syntax error function here to generate 
 		// a syntax error message here and do recovery
-		syntax_error1(saved_lexeme, expected)
+		syntax_error1(saved_lexeme, expected);
 	}
 	else // match has occurred
 	{
@@ -120,10 +120,12 @@ boolean match(tokentype expected)
 		token_available = false; // eat up the token
 		return true;		 // say there was a match
 	}
+
+	return 0;
 }
 
 
-}
+
 
 // ----- RDP functions - one per non-term -------------------
 
@@ -139,10 +141,10 @@ void tense()
 	cout << "Processing (tense)" << endl;
 	switch(next_token())
 	{
-		case VERPAST:
+		case VERBPAST:
 			match(VERBPAST);
 			break;
-		case VERPASTNEG:
+		case VERBPASTNEG:
 			match(VERBPASTNEG);
 			break;
 		case VERB:
@@ -322,7 +324,7 @@ void after_subject()
 }
 
 // [Connector] <noun> SUBJECT <after subject>
-void S()
+void sentenceS()
 {
 
 	cout << "Processing (S)" << endl;
@@ -340,7 +342,7 @@ void S()
 	after_subject();
 }
 
-
+/*
 string filename;
 
 //----------- Driver ---------------------------
@@ -351,22 +353,31 @@ int main()
 {
  // call the reserved words from the scanner
  // create a void init() in the parser code or scanner code
- // init();
-  
+  init();
+  // read the file
   cout << "Enter the input file name: ";
   cin >> filename;
   fin.open(filename.c_str());
+  
   int countSentences = 0;
   while (true)
   {
-	S()
+	cout << "------------------------------------" << endl;
+	cout << "       Reading Sentence: " << countSentences << endl;
+	cout << "------------------------------------" << endl;
+	sentenceS();
+	// count the number of sentences
 	countSentences++;
   }
 
-  //** calls the <story> to start parsing
-  //** closes the input file 
+  // calls the <story> to start parsing
+  // closes the input file 
+  cout << "End of file is encountered." << endl;
+  fin.close();
+  // end of the file
 
 }// end
-//** require no other input files!
-//** syntax error EC requires producing errors.txt of error messages
-//** tracing On/Off EC requires sending a flag to trace message output functions
+// require no other input files!
+// syntax error EC requires producing errors.txt of error messages
+// tracing On/Off EC requires sending a flag to trace message output functions
+*/
