@@ -397,7 +397,7 @@ void scanner(tokenType& the_type, string& w) {
     // none of the are true then return false and does not 
     // exitis in languages.
     if (w == "eofm")
-    { cout << "Reached the end of the file…." << endl; the_type = EOFM;}   
+    { cout << "Reached the end of the file…." << endl; the_type = EOFM;return; }   
 
 
     if (word(w))
@@ -551,7 +551,12 @@ tokenType next_token()
       scanner(saved_token, saved_lexeme); // call scanner to grab a new token
       cout << "Scanner called using word: " << saved_lexeme << endl;
       token_available = true;
-                
+      if (saved_lexeme == "eofm")
+	{
+		cout << "successfully parsed <story>!" << endl;
+		cout << "The End" << endl;
+		exit(1);
+	}        
       if (saved_token == ERROR)
 	{       
 	  syntax_error1(saved_lexeme, saved_token);
