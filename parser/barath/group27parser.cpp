@@ -28,9 +28,7 @@ bool vowel (char s1)
 		}
 	}
 	return false;
-}
-
-
+}//end of vowel
 
 // singleConsonant function loops through the character array and determine
 // if it is a single consonant character.
@@ -46,9 +44,7 @@ bool singleConsonant(char s1)
                   }
          }
          return false;
-}
-
-
+}//end of singleConsonant
 
 // pairConsonant function loops through the character array and determines
 // whether it is a consonant.
@@ -64,7 +60,7 @@ bool pairConsonant(char s1)
                    }
           }
           return false;
-}
+}//end of pairConsonant
 
 
 // WORD DFA 
@@ -154,7 +150,7 @@ bool word(string s)
     }
 
 
-} // end of function
+} // end of word()
 
 
 // PERIOD DFA 
@@ -177,7 +173,7 @@ bool period(string s)
   { return true;}
   else 
   {return false;}
-} // end of function
+} // end of period()
 
 // ------ Three  Tables -------------------------------------
 // TABLES Done by: Ezer & Damian
@@ -191,9 +187,9 @@ struct tokenList
 {
         string WORD;
         tokenType TYPE;
-};
+};//end of tokenList class
 
-vector <tokenList> tokenNameList;
+vector <tokenList> tokenNameList; 
 
 // PURPOSE: To assigned the correct word for the tokenType
 // PARAMETERS: index number and tokenType
@@ -334,7 +330,9 @@ void init()
 					break;
 			}
 	}
-}
+}//end of init()
+
+
 // PURPOSE: reservedWords would loop over the tokenName and identify the index
 // number and input into the printReservedWord
 // PARAMETER: main word string, vector where all the reserved words are located,
@@ -363,7 +361,7 @@ void init()
 
 // Scanner processes only one word each time it is called
 // Gives back the token type and the word itself
-// ** Done by: Damian
+// ** Done by: Damian, Ezar, and Barath
 void scanner(tokenType& the_type, string& w) {
 
   // ** Grab the next word from the file via fin
@@ -431,7 +429,7 @@ void scanner(tokenType& the_type, string& w) {
 		the_type = ERROR;
 	}
      
-}//the end of scanner
+}//end of scanner()
 
 /*
 // The temporary test driver to just call the scanner repeatedly  
@@ -483,15 +481,13 @@ int main()
 */
 
 //=================================================
-// File parser.cpp written by Group Number: **
+// File parser.cpp written by Group Number: Group 27
 //=================================================
 
 // ----- Four Utility Functions and Globals -----------------------------------
 
 // ** Need syntaxerror1 and syntaxerror2 functions (each takes 2 args)
 //    to display syntax error messages as specified by me.  
-
-
 
 
 string tokenName[16] = {"VERB","VERBNEG","VERBPAST", "VERBPASTNEG", "IS", "WAS", "OBJECT", "SUBJECT", "DESTINATION", "PRONOUN", "CONNECTOR", "WORD1", "WORD2\
@@ -509,6 +505,8 @@ string saved_lexeme;
 bool token_available;
 
 
+// Type of error: expected tokenName but found lexeme 
+// // Done by: Damien
 void syntax_error1(string lexeme , tokenType savedT)
 {
 
@@ -516,18 +514,16 @@ void syntax_error1(string lexeme , tokenType savedT)
   cout << "Terminate the Program" << endl;
   exit(1);
 
-}
-// Type of error: ** swwitch default
-// // Done by: ** 
+}//end of syntax_error1
+
+// Type of error: unexpected lexeme
+// // Done by: Damien
 void syntax_error2(string expec, string lexeme )
 {
     cout << "SYNTAX ERROR: unexpected " << lexeme << " found in " << expec << "!" ;
     cout << "Terminate the Program" << endl;
     exit(1);
-}
-
-
-
+}//end of syntax_error2
 
 
 // ** Need the updated match and next_token with 2 global vars
@@ -539,10 +535,7 @@ void syntax_error2(string expec, string lexeme )
 // and the flag is set true.
 // A token is grabbed but is not eaten up.
 // Returns the save_token
-// Done by: **
-
-///--------------------------Barath's Function----------------------------
-// -----------------------Change 2-----------------------------------
+// Done by: Barath
 tokenType next_token()
 {       
   string saved_lexeme;
@@ -563,7 +556,7 @@ tokenType next_token()
 	}
     }
   return saved_token; // return the saved token
-}
+}//end of next_token()
 
 //-----------------------------------------------------------------------------
 
@@ -571,7 +564,7 @@ tokenType next_token()
 // HOW: check to see if expected is different from next_token()
 // and if so, generates a syntax error and handles the error
 // else token_available become false (eat up) and return true.
-// Done by: **
+// Done by: Barath 
 bool match(tokenType expected) 
 {
 
@@ -600,9 +593,8 @@ bool match(tokenType expected)
 // ** Be sure to put the corresponding grammar rule above each function
 // ** Be sure to put the name of the programmer above each function
 
-// Grammar: **
-// Done by: **
-// VERBPAST | VERBPASTNEG | VERB | VERBNEG
+// Grammar: // VERBPAST | VERBPASTNEG | VERB | VERBNEG
+// Done by: Ezar, Barath, Damien
 void tense()
 {
 	cout << "++++++++++++++++++++++++++++++++++++++++++" << endl;
@@ -625,11 +617,11 @@ void tense()
 			syntax_error2("tense", saved_lexeme);
 			break;
 
-	}
-
-}
+	}//end of switch
+}//end of tense()
 
 // IS | WAS
+// Done by: Ezar, Barath, Damien
 void be()
 {
 	cout << "++++++++++++++++++++++++++++++++++++++++++" << endl;
@@ -645,16 +637,17 @@ void be()
 		default:
 			syntax_error2("be", saved_lexeme);
 			break;
-	}
-}
+	}//end of switch
+}//end of be()
 
 // WORD2
+//Done by: Ezar, Barath, Damien
 void verb()
 {
 	cout << "++++++++++++++++++++++++++++++++++++++++++" << endl;
 	cout << "Processing <verb>" << endl;
 	match(WORD2);	
-}
+}//end of verb()
 
 // WORD1 | PRONOUN
 void noun()
@@ -673,29 +666,31 @@ void noun()
 			syntax_error2("noun", saved_lexeme);
 			break;
 
-	}
-
-}
+	}//end of switch
+}//end of noun()
 
 // <tense> PERIOD
+//Done by: Ezar, Barath, Damien
 void afterVerb()
 {
 	cout << "++++++++++++++++++++++++++++++++++++++++++" << endl;
 	cout << "Processing <afterVerb>" << endl;
 	tense();
 	match(PERIOD);
-}
+}//afterVerb()
 
-// <verb> <after verb> PERIOD
+// <verb> <after verb> PERIO
+//Done by: Ezar, Barath, Damien
 void afterDestination()
 {
 	cout << "++++++++++++++++++++++++++++++++++++++++++" << endl;	
 	cout << "Processing <afterDestination>" << endl;
 	verb();
 	afterVerb();
-}
+}//end of afterDestination()
 
 // <verb> <after verb> | <noun> DESTINATION <after destination>
+//Done by: Ezar, Barath, Damien
 void afterObject()
 {
 	cout << "++++++++++++++++++++++++++++++++++++++++++" << endl;
@@ -719,11 +714,11 @@ void afterObject()
 		default:
 			syntax_error2("afterObject", saved_lexeme);
 			break;
-	}
-}
-
+	}//end of switch()
+}//end of afterObject()
 
 // <be> PERIOD | DESTINATION <after destination> | OBJECT <after object>
+//Done by: Ezar, Barath, Damien
 void afterNoun()
 {
 	cout << "++++++++++++++++++++++++++++++++++++++++++" << endl;
@@ -749,10 +744,11 @@ void afterNoun()
 		default:
 			syntax_error2("afterNoun", saved_lexeme);
 			break;
-	}
-}
+	}//end of switch()
+}//end of afterNoun
 
 // <verb> <tense> PERIOD | <noun> <after noun>
+//Done by: Ezar, Barath, Damien
 void afterSubject()
 {
 	cout << "++++++++++++++++++++++++++++++++++++++++++" << endl;
@@ -775,10 +771,11 @@ void afterSubject()
 		default:
 			syntax_error2("afterSubject", saved_lexeme);
 			break;
-	}
-}
+	}//end of switch()
+}//end of afterSubject()
 
 // [Connector] <noun> SUBJECT <after subject>
+//Done by: Ezar, Barath, Damien
 void sentenceS()
 {
 	cout << "++++++++++++++++++++++++++++++++++++++++++" << endl;
@@ -791,9 +788,7 @@ void sentenceS()
 	noun();
 	match(SUBJECT);
 	afterSubject();
-}
-
-
+}//end of sentenceS()
 
 
 string filename;
@@ -801,7 +796,7 @@ string filename;
 //----------- Driver ---------------------------
 
 // The new test driver to start the parser
-// Done by:  **
+// Done by: Ezar
 int main()
 {
  // call the reserved words from the scanner
@@ -830,7 +825,7 @@ int main()
   fin.close();
   // end of the file
 
-}// end
+}// end of main()
 // require no other input files!
 // syntax error EC requires producing errors.txt of error messages
 // tracing On/Off EC requires sending a flag to trace message output functions

@@ -1,28 +1,36 @@
 
 Fill this out and submitIt_LK this file with the executable.
 
-Group#:
+Group#: Group27
 
 Must have divided the work as specified.
 If the member did not fully contribute to the assigned part, do not list his/her name!
 
 1.State who did what by indicating: 
-  Member A tasks (syntax error functions) - who:
-  Member B tasks (match and next_token)- who:
-  Member C tasks (main()) who:
+  Member A tasks (syntax error functions) - who:  Damien
+  Member B tasks (match and next_token)- who:     Barath
+  Member C tasks (main()) who:		 	  Ezar
   Who wrote which parser functions? 
-  functions             who
-  ----------------      ----------
+
+    functions             	    who
+    ----------------      	    ----------
+ 1. syntax error functions 	    Damien
+ 2. match and next_token	    Barath
+ 3. RDP functions (ex: tense)	    Barath, Damien, Ezar
+ 3. main      			    Ezar
+
 
 2.  Who came to the meeting to test the program together?
 
-3.  You have included all the required comments? 
+    Damien, Ezar, Barath 
+
+3.  You have included all the required comments? Yes
     (Grammer: and Done by: )
 
-4.  The parser produced correct output for 
+4.  The parser produced correct output for    No
     all 6 test cases?
 
-5.  What extra credit feature did you include?
+5.  What extra credit feature did you include?                    None            
     If it is error correction, did you make sure errors.txt
     got produced?
     [ You may still do EC later ]
