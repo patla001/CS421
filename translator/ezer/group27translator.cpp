@@ -6,7 +6,8 @@
 #include <vector>
 #include <unordered_map>
 #include <map>
-#include "dictionary.h"
+#include "translator.h"
+
 using std::ifstream;
 using std::unordered_map;
 
@@ -861,7 +862,7 @@ void sentenceS()
 
 //----------- Driver ---------------------------
 
-
+/*
 // The new test driver to start the parser
 // Done by: Ezer
 int main()
@@ -893,6 +894,7 @@ int main()
   // end of the file
 
 }// end of main()
+*/
 // require no other input files!
 // syntax error EC requires producing errors.txt of error messages
 // tracing On/Off EC requires sending a flag to trace message output functions
@@ -941,28 +943,3 @@ int main()
 //    getEword and/or gen now.
 
 
-// ---------------- Driver ---------------------------
-
-// The final test driver to start the translator
-// Done by:  **
-/*int main()
-{
-  //** opens the lexicon.txt file and reads it into Lexicon
-  //** closes lexicon.txt
-
-  //** opens the output file translated.txt
-
-  cout << "Enter the input file name: ";
-  cin >> filename;
-  fin.open(filename.c_str());
-
-  //** calls the <story> to start parsing
-
-  //** closes the input file
-  //** closes traslated.txt
-
-}// end
-*/
-//** require no other input files!
-//** syntax error EC requires producing errors.txt of error messages
-//** tracing On/Off EC requires sending a flag to trace message output functions

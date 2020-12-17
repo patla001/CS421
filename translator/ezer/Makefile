@@ -5,7 +5,7 @@ CC = g++
 CFLAGS = -g -Wall -std=c++11
 LDFLAGS = -L.
 PROG = main
-SRCS = main.cpp group27translator.cpp dictionary.cpp
+SRCS = main.cpp group27translator.cpp translator.cpp dictionary.cpp
 OBJ = $(SRCS:.cpp=.o)
 
 all : $(PROG) depend
@@ -22,7 +22,7 @@ depend: .depend
 	/bin/rm -f ./.depend
 	$(CC) $(CFLAGS) -MM $^ > ./.depend;
 
-include .depend
+#include .depend
 
 # clean up
 clean:

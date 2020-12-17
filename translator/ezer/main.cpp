@@ -1,4 +1,13 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <stdlib.h>
+#include <vector>
+#include "dictionary.h"
+#include "group27translator.h"
+#include "translator.h"
 
+using namespace std;
 
 //----------- Driver ---------------------------
 
@@ -7,6 +16,8 @@
 // Done by: Ezer
 int main()
 {
+  ifstream fin;
+  string filename;
  // call the reserved words from the scanner
  // create a void init() in the parser code or scanner code
   init();
@@ -22,8 +33,9 @@ int main()
         cout << "       Reading Sentence: " << countSentences << endl;
         cout << "------------------------------------" << endl;
         sentenceS();
-        translation << endl;
-        // count the number of sentences
+        //translation << endl;
+        writeBlank();
+	// count the number of sentences
         countSentences++;
   }
   

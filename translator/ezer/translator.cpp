@@ -1,6 +1,9 @@
 #include<iostream>
 #include<fstream>
 #include<string>
+#include "group27translator.h"
+#include "dictionary.h"
+
 using namespace std;
 
 /* INSTRUCTION:  copy your parser.cpp here
@@ -31,11 +34,10 @@ using namespace std;
 //                     (saved_E_word or saved_token is used)
 //  Done by: ** 
 
-#include "Dictionary.h"
 
-ofstream translation("lexicon.txt");
+ofstream translation("translation.txt");
 
-string saveEword;
+string savedEWord;
 string savedToken;
 Dictionary d; 
 
@@ -51,13 +53,16 @@ void gen(string line)
 		savedToken = "TENSE: " + getCurrentToken();
 		translation << savedToken << endl;
 	} else {
-		savedEword = lin + ": " + savedEword;
-		translation << savedEword << endl;
+		savedEWord = line + ": " + savedEWord;
+		translation << savedEWord << endl;
 	}
 }
 
 	
-
+void writeBlank()
+{
+	translation << endl;
+}
 
 
 // ----- Changes to the parser.cpp content ---------------------
@@ -67,30 +72,4 @@ void gen(string line)
 
 // ** Each non-terminal function should be calling
 //    getEword and/or gen now.
-
-
-// ---------------- Driver ---------------------------
-
-// The final test driver to start the translator
-// Done by:  **
-int main()
-{
-  //** opens the lexicon.txt file and reads it into Lexicon
-  //** closes lexicon.txt 
-
-  //** opens the output file translated.txt
-
-  cout << "Enter the input file name: ";
-  cin >> filename;
-  fin.open(filename.c_str());
-
-  //** calls the <story> to start parsing
-
-  //** closes the input file 
-  //** closes traslated.txt
- 
-}// end
-//** require no other input files!
-//** syntax error EC requires producing errors.txt of error messages
-//** tracing On/Off EC requires sending a flag to trace message output functions
 
