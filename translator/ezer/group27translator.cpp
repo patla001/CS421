@@ -4,6 +4,12 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <unordered_map>
+#include <map>
+#include "dictionary.h"
+using std::ifstream;
+using std::unordered_map;
+
 using namespace std;
 
 /* Look for all **'s and complete them */
@@ -401,45 +407,7 @@ void scanner(tokenType& the_type, string& w) {
 
 }//end of scanner()
 
-/*
-// The temporary test driver to just call the scanner repeatedly
-// This will go away after this assignment
-// DO NOT CHANGE THIS!!!!!!
-// Done by:  Louis
-int main()
-{
 
-  string filename;
-
-  cout << "Enter the input file name: ";
-  cin >> filename;
-
-  fin.open(filename.c_str());
-
-  tokenType thetype;
-  string theword;
-
-  string tokenName[16] = {"VERB","VERBNEG","VERBPAST", "VERBPASTNEG", "IS", "WAS", "OBJECT", "SUBJECT", "DESTINATION", "PRONOUN", "CONNECTOR", "WORD1", "WORD2", "PERIOD", "ERROR", "EOFM"};
-
-
-  // the loop continues until eofm is returned.
-   while (true)
-    {
-       scanner(thetype, theword);  // call the scanner which sets
-
-       if (theword == "eofm") break;  // stop now
-	cout << ">>index: " << thetype << endl;
-	cout << ">>>Type is:" << tokenName[thetype] << endl;
-        cout << ">>>Word is:" << theword << endl;
-    }
-
-   cout << "End of file is encountered." << endl;
-   fin.close();
-
-}// end
-*/
-
-//using namespace std;
 
 /* INSTRUCTION:  Complete all ** parts.
    You may use any method to connect this file to scanner.cpp
@@ -460,6 +428,8 @@ int main()
 //    to display syntax error messages as specified by me.
 
 
+
+
 string tokenName[16] = {"VERB","VERBNEG","VERBPAST", "VERBPASTNEG", "IS", "WAS", "OBJECT", "SUBJECT", "DESTINATION", "PRONOUN", "CONNECTOR", "WORD1", "WORD2\
    ", "PERIOD", "ERROR", "EOFM"};
 
@@ -473,6 +443,17 @@ string saved_lexeme;
 // global flag indicating whether
 // we have saved a token to eat up or not
 bool token_available;
+
+
+string getCurrentLexeme()
+{
+	return saved_lexeme;
+}
+
+string getCurrentToken()
+{
+	return tokenName[saved_token];
+}
 
 
 // Type of error: expected tokenName but found lexeme
@@ -557,7 +538,100 @@ bool match(tokenType expected)
 
 
 
+
+
+
+// ----- Translator ----------------------------------------
+/*
+ofstream translation("trasnlator.txt");
+
+string savedEword;
+string savedToken;
+
+//Dictionary d;
+
+
+struct WORDS
+{
+	string englishWord;
+	string japaneseWord;
+};
+
+
+unordered_map <string, WORDS*> englishWords;
+unordered_map <string, WORDS*> japaneseWords;
+
+
+string lookUp(string word)
+{
+	WORDS* ew = englishWords[word];
+        WORDS* jw = japaneseWords[word];
+
+        if (ew != NULL && ew-> englishWord == word)
+        {
+                word = ew->japaneseWord;
+        } else if(jw != NULL && jw -> japaneseWord == word)
+        {
+                word = jw-> englishWord;
+        } else {
+                cout << "From lookUp: " << word << " is not in the dictionary." << endl;
+        }
+        return word;
+}
+
+
+
+string filename;
+
+void read()
+{
+
+	cout << "Reading lexicon.txt..." << endl;
+        ifstream dictionaryFile("lexicon.txt");
+        string input;
+        while (dictionaryFile >> input)
+        {
+                WORDS* wordInput = new WORDS;
+                wordInput-> japaneseWord = input;
+                dictionaryFile >> input;
+                wordInput -> englishWord = input;
+                japaneseWords.insert(pair <string, WORDS* > (wordInput -> japaneseWord, wordInput));
+                englishWords.insert(pair <string,  WORDS* > (wordInput -> englishWord, wordInput));
+        }
+
+        cout << "Translator completed" << endl;
+
+};
+
+
+void getEword()
+{
+        read();
+        savedEword = lookUp(getCurrentLexeme());
+}
+
+void gen(string line)
+{
+	//string savedToken;
+        if (line == "TENSE")
+        {
+                savedToken = "TENSE: " + getCurrentToken();
+                translation << savedToken << endl;
+        } else {
+                savedEword = line + ": " + savedEword;
+                translation << savedEword << endl;
+        }
+}
+
+*/
+
+//----------------------------------------------------------
+
+
+
+
 // ----- RDP functions - one per non-term -------------------
+
 
 // ** Make each non-terminal into a function here
 // ** Be sure to put the corresponding grammar rule above each function
@@ -646,6 +720,7 @@ void afterVerb()
 	cout << "++++++++++++++++++++++++++++++++++++++++++" << endl;
 	cout << "Processing <afterVerb>" << endl;
 	tense();
+	gen("TENSE");
 	match(PERIOD);
 }//afterVerb()
 
@@ -656,6 +731,8 @@ void afterDestination()
 	cout << "++++++++++++++++++++++++++++++++++++++++++" << endl;
 	cout << "Processing <afterDestination>" << endl;
 	verb();
+	getEword();
+	gen("ACTION");
 	afterVerb();
 }//end of afterDestination()
 
@@ -669,16 +746,22 @@ void afterObject()
 	{
 		case WORD2:
 			match(WORD2);
+			getEword();
+			gen("ACTION");
 			afterVerb();
 			break;
 		case WORD1:
 			match(WORD1);
+			getEword();
 			match(DESTINATION);
+			gen("TO");
 			afterDestination();
 			break;
 		case PRONOUN:
 			match(PRONOUN);
+			getEword();
 			match(DESTINATION);
+			gen("TO");
 			afterDestination();
 			break;
 		default:
@@ -697,18 +780,24 @@ void afterNoun()
 	{
 		case IS:
 			match(IS);
+			gen("DESCRIPTION");
+			gen("TENSE");
 			match(PERIOD);
 			break;
 		case WAS:
 			match(WAS);
+			gen("DESCRIPTION");
+			gen("TENSE");
 			match(PERIOD);
 			break;
 		case DESTINATION:
 			match(DESTINATION);
+			gen("TO");
 			afterDestination();
 			break;
 		case OBJECT:
 			match(OBJECT);
+			gen("OBJECT");
 			afterObject();
 			break;
 		default:
@@ -727,15 +816,20 @@ void afterSubject()
 	{
 		case WORD2:
 			match(WORD2);
+			getEword();
+			gen("ACTION");
 			tense();
+			gen("TENSE");
 			match(PERIOD);
 			break;
 		case WORD1:
 			match(WORD1);
+			getEword();
 			afterNoun();
 			break;
 		case PRONOUN:
 			match(PRONOUN);
+			getEword();
 			afterNoun();
 			break;
 		default:
@@ -753,19 +847,21 @@ void sentenceS()
 	if (next_token() == CONNECTOR)
 	{
 		match(CONNECTOR);
+		getEword();
+		gen("CONNECTOR");
 	}
 
 	noun();
+	getEword();
 	match(SUBJECT);
+	gen("ACTOR");
 	afterSubject();
 }//end of sentenceS()
 
 
-string filename;
-
 //----------- Driver ---------------------------
 
-/*
+
 // The new test driver to start the parser
 // Done by: Ezer
 int main()
@@ -785,7 +881,7 @@ int main()
 	cout << "       Reading Sentence: " << countSentences << endl;
 	cout << "------------------------------------" << endl;
 	sentenceS();
-
+        translation << endl;
 	// count the number of sentences
 	countSentences++;
   }
@@ -805,23 +901,6 @@ int main()
 //#include<string>
 //using namespace std;
 
-*/
-/* INSTRUCTION:  copy your parser.cpp here
-      cp ../ParserFiles/parser.cpp .
-   Then, insert or append its contents into this file and edit.
-   Complete all ** parts.
-*
-
-//****************************Scanner and Parser Code here************************************
-//               
-//
-//
-//
-//
-//
-//****************************************************************************************************
-
-
 
 
 
@@ -834,25 +913,29 @@ int main()
 
 // ** Declare Lexicon (i.e. dictionary) that will hold the content of lexicon.txt
 // Make sure it is easy and fast to look up the translation.
-// Do not change the format or content of lexicon.txt 
-//  Done by: ** 
+// Do not change the format or content of lexicon.txt
+//  Done by: **
 
 
 // ** Additions to parser.cpp here:
 //    getEword() - using the current saved_lexeme, look up the English word
-//                 in Lexicon if it is there -- save the result   
+//                 in Lexicon if it is there -- save the result
 //                 in saved_E_word
-//  Done by: ** 
+//  Done by: **
 //    gen(line_type) - using the line type,
 //                     sends a line of an IR to translated.txt
 //                     (saved_E_word or saved_token is used)
-//  Done by: ** 
+//  Done by: **
 
 // ----- Changes to the parser.cpp content ---------------------
 
-// ** Comment update: Be sure to put the corresponding grammar 
+
+
+
+
+// ** Comment update: Be sure to put the corresponding grammar
 //    rule with semantic routine calls
-//    above each non-terminal function 
+//    above each non-terminal function
 
 // ** Each non-terminal function should be calling
 //    getEword and/or gen now.
@@ -862,10 +945,10 @@ int main()
 
 // The final test driver to start the translator
 // Done by:  **
-int main()
+/*int main()
 {
   //** opens the lexicon.txt file and reads it into Lexicon
-  //** closes lexicon.txt 
+  //** closes lexicon.txt
 
   //** opens the output file translated.txt
 
@@ -875,11 +958,11 @@ int main()
 
   //** calls the <story> to start parsing
 
-  //** closes the input file 
+  //** closes the input file
   //** closes traslated.txt
- 
+
 }// end
+*/
 //** require no other input files!
 //** syntax error EC requires producing errors.txt of error messages
 //** tracing On/Off EC requires sending a flag to trace message output functions
-

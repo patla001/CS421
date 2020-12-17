@@ -31,8 +31,36 @@ using namespace std;
 //                     (saved_E_word or saved_token is used)
 //  Done by: ** 
 
-// ----- Changes to the parser.cpp content ---------------------
+#include "Dictionary.h"
 
+ofstream translation("lexicon.txt");
+
+string saveEword;
+string savedToken;
+Dictionary d; 
+
+void getEword()
+{
+	savedEWord = d.lookUp(getCurrentLexeme());
+}
+
+void gen(string line)
+{
+	if (line == "TENSE")
+	{
+		savedToken = "TENSE: " + getCurrentToken();
+		translation << savedToken << endl;
+	} else {
+		savedEword = lin + ": " + savedEword;
+		translation << savedEword << endl;
+	}
+}
+
+	
+
+
+
+// ----- Changes to the parser.cpp content ---------------------
 // ** Comment update: Be sure to put the corresponding grammar 
 //    rule with semantic routine calls
 //    above each non-terminal function 
