@@ -1,0 +1,43 @@
+
+Fill this and submitIt_LK with the executable.
+
+GROUP#: 27
+
+Must have divided the work as specified.
+If the member did not fully contribute to the assigned part,
+do not list his/her name!!!!!
+
+1.State who did what by indicating: 
+  Member A tasks (getEword) - who:  Ezer
+  Member B tasks (gen) - who:       Ezer, Barath
+  Member C tasks (read*) - who:     Damien, Ezer
+
+  *we renamed dictionary function as the read function in our program
+
+  Who updated which parser functions with getEword and gen calls?
+   functions         who
+   -------------     ---------
+   A. getEword       Barath
+   B. gen	     Ezer, Barath	     
+   C. read	     Damien, Ezer
+   D. lookUp   	     Ezer, Barath, Damien
+
+2. Who came to the meeting to put together the work?
+
+   Ezer, Damien, Barath
+
+3. You have included all the required comments?
+   (updated the grammar rules in comments?)
+
+   Yes, we have included all the required comments for the project. 
+
+4. The project produced correct output for all 6
+   test cases?
+
+   Yes, it produced correct outputs for all 6 test cases.
+
+5. If you did EC error recovery,
+   test 7 worked and produced translated.txt and errors.txt?
+
+   We did not do EC error recovery for our project.   
+
