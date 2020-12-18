@@ -1,0 +1,830 @@
+Script started on Thu 17 Dec 2020 04:58:28 PM PST
+]0;patla001@empress:~/cs/CS421Progs/Github/CS421/translator/ezer[patla001@empress ezer]$ ./single27translator.out 
+Enter the input file name: partCtest1
+------------------------------------
+       Reading Sentence: 1
+------------------------------------
+++++++++++++++++++++++++++++++++++++++++++
+Processing <sentenceS>
+
+.....Scanner was called...
+>>>>>Word is:watashi
+passed: i
+passing by word1
+Scanner called using word: watashi
+++++++++++++++++++++++++++++++++++++++++++
+Processing <noun>
+Matched PRONOUN <<<<
+Reading lexicon.txt...
+Translator completed
+getCurrentLexeme(): watashi
+lookUp Function: watashi
+
+.....Scanner was called...
+>>>>>Word is:wa
+passed: a
+passing by word1
+Scanner called using word: wa
+Matched SUBJECT <<<<
+++++++++++++++++++++++++++++++++++++++++++
+Processing <afterSubject>
+
+.....Scanner was called...
+>>>>>Word is:rika
+passed: a
+passing by word1
+Scanner called using word: rika
+Matched WORD1 <<<<
+Reading lexicon.txt...
+Translator completed
+getCurrentLexeme(): rika
+lookUp Function: rika
+From lookUp: rika is not in the dictionary.
+++++++++++++++++++++++++++++++++++++++++++
+Processing <afterNoun> 
+
+.....Scanner was called...
+>>>>>Word is:desu
+passed: u
+passing by word1
+Scanner called using word: desu
+Matched IS <<<<
+
+.....Scanner was called...
+>>>>>Word is:.
+passing by period
+Scanner called using word: .
+Matched PERIOD <<<<
+------------------------------------
+       Reading Sentence: 2
+------------------------------------
+++++++++++++++++++++++++++++++++++++++++++
+Processing <sentenceS>
+
+.....Scanner was called...
+>>>>>Word is:watashi
+passed: i
+passing by word1
+Scanner called using word: watashi
+++++++++++++++++++++++++++++++++++++++++++
+Processing <noun>
+Matched PRONOUN <<<<
+Reading lexicon.txt...
+Translator completed
+getCurrentLexeme(): watashi
+lookUp Function: watashi
+
+.....Scanner was called...
+>>>>>Word is:wa
+passed: a
+passing by word1
+Scanner called using word: wa
+Matched SUBJECT <<<<
+++++++++++++++++++++++++++++++++++++++++++
+Processing <afterSubject>
+
+.....Scanner was called...
+>>>>>Word is:sensei
+passed: i
+passing by word1
+Scanner called using word: sensei
+Matched WORD1 <<<<
+Reading lexicon.txt...
+Translator completed
+getCurrentLexeme(): sensei
+lookUp Function: sensei
+++++++++++++++++++++++++++++++++++++++++++
+Processing <afterNoun> 
+
+.....Scanner was called...
+>>>>>Word is:desu
+passed: u
+passing by word1
+Scanner called using word: desu
+Matched IS <<<<
+
+.....Scanner was called...
+>>>>>Word is:.
+passing by period
+Scanner called using word: .
+Matched PERIOD <<<<
+------------------------------------
+       Reading Sentence: 3
+------------------------------------
+++++++++++++++++++++++++++++++++++++++++++
+Processing <sentenceS>
+
+.....Scanner was called...
+>>>>>Word is:rika
+passed: a
+passing by word1
+Scanner called using word: rika
+++++++++++++++++++++++++++++++++++++++++++
+Processing <noun>
+Matched WORD1 <<<<
+Reading lexicon.txt...
+Translator completed
+getCurrentLexeme(): rika
+lookUp Function: rika
+From lookUp: rika is not in the dictionary.
+
+.....Scanner was called...
+>>>>>Word is:wa
+passed: a
+passing by word1
+Scanner called using word: wa
+Matched SUBJECT <<<<
+++++++++++++++++++++++++++++++++++++++++++
+Processing <afterSubject>
+
+.....Scanner was called...
+>>>>>Word is:gohan
+passed: n
+passing by word1
+Scanner called using word: gohan
+Matched WORD1 <<<<
+Reading lexicon.txt...
+Translator completed
+getCurrentLexeme(): gohan
+lookUp Function: gohan
+++++++++++++++++++++++++++++++++++++++++++
+Processing <afterNoun> 
+
+.....Scanner was called...
+>>>>>Word is:o
+passed: o
+passing by word1
+Scanner called using word: o
+Matched OBJECT <<<<
+++++++++++++++++++++++++++++++++++++++++++
+Processing <afterObject>
+
+.....Scanner was called...
+>>>>>Word is:tabE
+passed: E
+passing by word2
+Scanner called using word: tabE
+Matched WORD2    <<<<
+Reading lexicon.txt...
+Translator completed
+getCurrentLexeme(): tabE
+lookUp Function: tabE
+++++++++++++++++++++++++++++++++++++++++++
+Processing <afterVerb>
+++++++++++++++++++++++++++++++++++++++++++
+Processing <tense>
+
+.....Scanner was called...
+>>>>>Word is:masu
+passed: u
+passing by word1
+Scanner called using word: masu
+Matched VERB <<<<
+
+.....Scanner was called...
+>>>>>Word is:.
+passing by period
+Scanner called using word: .
+Matched PERIOD <<<<
+------------------------------------
+       Reading Sentence: 4
+------------------------------------
+++++++++++++++++++++++++++++++++++++++++++
+Processing <sentenceS>
+
+.....Scanner was called...
+>>>>>Word is:watashi
+passed: i
+passing by word1
+Scanner called using word: watashi
+++++++++++++++++++++++++++++++++++++++++++
+Processing <noun>
+Matched PRONOUN <<<<
+Reading lexicon.txt...
+Translator completed
+getCurrentLexeme(): watashi
+lookUp Function: watashi
+
+.....Scanner was called...
+>>>>>Word is:wa
+passed: a
+passing by word1
+Scanner called using word: wa
+Matched SUBJECT <<<<
+++++++++++++++++++++++++++++++++++++++++++
+Processing <afterSubject>
+
+.....Scanner was called...
+>>>>>Word is:tesuto
+passed: o
+passing by word1
+Scanner called using word: tesuto
+Matched WORD1 <<<<
+Reading lexicon.txt...
+Translator completed
+getCurrentLexeme(): tesuto
+lookUp Function: tesuto
+++++++++++++++++++++++++++++++++++++++++++
+Processing <afterNoun> 
+
+.....Scanner was called...
+>>>>>Word is:o
+passed: o
+passing by word1
+Scanner called using word: o
+Matched OBJECT <<<<
+++++++++++++++++++++++++++++++++++++++++++
+Processing <afterObject>
+
+.....Scanner was called...
+>>>>>Word is:seito
+passed: o
+passing by word1
+Scanner called using word: seito
+Matched WORD1 <<<<
+Reading lexicon.txt...
+Translator completed
+getCurrentLexeme(): seito
+lookUp Function: seito
+
+.....Scanner was called...
+>>>>>Word is:ni
+passed: i
+passing by word1
+Scanner called using word: ni
+Matched DESTINATION <<<<
+++++++++++++++++++++++++++++++++++++++++++
+Processing <afterDestination>
+++++++++++++++++++++++++++++++++++++++++++
+Processing <verb>
+
+.....Scanner was called...
+>>>>>Word is:agE
+passed: E
+passing by word2
+Scanner called using word: agE
+Matched WORD2    <<<<
+Reading lexicon.txt...
+Translator completed
+getCurrentLexeme(): agE
+lookUp Function: agE
+++++++++++++++++++++++++++++++++++++++++++
+Processing <afterVerb>
+++++++++++++++++++++++++++++++++++++++++++
+Processing <tense>
+
+.....Scanner was called...
+>>>>>Word is:mashita
+passed: a
+passing by word1
+Scanner called using word: mashita
+Matched VERBPAST <<<<
+
+.....Scanner was called...
+>>>>>Word is:.
+passing by period
+Scanner called using word: .
+Matched PERIOD <<<<
+------------------------------------
+       Reading Sentence: 5
+------------------------------------
+++++++++++++++++++++++++++++++++++++++++++
+Processing <sentenceS>
+
+.....Scanner was called...
+>>>>>Word is:shikashi
+passed: i
+passing by word1
+Scanner called using word: shikashi
+Matched CONNECTOR <<<<
+Reading lexicon.txt...
+Translator completed
+getCurrentLexeme(): shikashi
+lookUp Function: shikashi
+++++++++++++++++++++++++++++++++++++++++++
+Processing <noun>
+
+.....Scanner was called...
+>>>>>Word is:seito
+passed: o
+passing by word1
+Scanner called using word: seito
+Matched WORD1 <<<<
+Reading lexicon.txt...
+Translator completed
+getCurrentLexeme(): seito
+lookUp Function: seito
+
+.....Scanner was called...
+>>>>>Word is:wa
+passed: a
+passing by word1
+Scanner called using word: wa
+Matched SUBJECT <<<<
+++++++++++++++++++++++++++++++++++++++++++
+Processing <afterSubject>
+
+.....Scanner was called...
+>>>>>Word is:yorokobI
+passed: I
+passing by word2
+Scanner called using word: yorokobI
+Matched WORD2    <<<<
+Reading lexicon.txt...
+Translator completed
+getCurrentLexeme(): yorokobI
+lookUp Function: yorokobI
+++++++++++++++++++++++++++++++++++++++++++
+Processing <tense>
+
+.....Scanner was called...
+>>>>>Word is:masendeshita
+passed: a
+passing by word1
+Scanner called using word: masendeshita
+Matched VERBPASTNEG <<<<
+
+.....Scanner was called...
+>>>>>Word is:.
+passing by period
+Scanner called using word: .
+Matched PERIOD <<<<
+------------------------------------
+       Reading Sentence: 6
+------------------------------------
+++++++++++++++++++++++++++++++++++++++++++
+Processing <sentenceS>
+
+.....Scanner was called...
+>>>>>Word is:dakara
+passed: a
+passing by word1
+Scanner called using word: dakara
+Matched CONNECTOR <<<<
+Reading lexicon.txt...
+Translator completed
+getCurrentLexeme(): dakara
+lookUp Function: dakara
+++++++++++++++++++++++++++++++++++++++++++
+Processing <noun>
+
+.....Scanner was called...
+>>>>>Word is:watashi
+passed: i
+passing by word1
+Scanner called using word: watashi
+Matched PRONOUN <<<<
+Reading lexicon.txt...
+Translator completed
+getCurrentLexeme(): watashi
+lookUp Function: watashi
+
+.....Scanner was called...
+>>>>>Word is:wa
+passed: a
+passing by word1
+Scanner called using word: wa
+Matched SUBJECT <<<<
+++++++++++++++++++++++++++++++++++++++++++
+Processing <afterSubject>
+
+.....Scanner was called...
+>>>>>Word is:kanashii
+passed: i
+passing by word1
+Scanner called using word: kanashii
+Matched WORD1 <<<<
+Reading lexicon.txt...
+Translator completed
+getCurrentLexeme(): kanashii
+lookUp Function: kanashii
+++++++++++++++++++++++++++++++++++++++++++
+Processing <afterNoun> 
+
+.....Scanner was called...
+>>>>>Word is:deshita
+passed: a
+passing by word1
+Scanner called using word: deshita
+Matched WAS <<<<
+
+.....Scanner was called...
+>>>>>Word is:.
+passing by period
+Scanner called using word: .
+Matched PERIOD <<<<
+------------------------------------
+       Reading Sentence: 7
+------------------------------------
+++++++++++++++++++++++++++++++++++++++++++
+Processing <sentenceS>
+
+.....Scanner was called...
+>>>>>Word is:soshite
+passed: e
+passing by word1
+Scanner called using word: soshite
+Matched CONNECTOR <<<<
+Reading lexicon.txt...
+Translator completed
+getCurrentLexeme(): soshite
+lookUp Function: soshite
+++++++++++++++++++++++++++++++++++++++++++
+Processing <noun>
+
+.....Scanner was called...
+>>>>>Word is:rika
+passed: a
+passing by word1
+Scanner called using word: rika
+Matched WORD1 <<<<
+Reading lexicon.txt...
+Translator completed
+getCurrentLexeme(): rika
+lookUp Function: rika
+From lookUp: rika is not in the dictionary.
+
+.....Scanner was called...
+>>>>>Word is:wa
+passed: a
+passing by word1
+Scanner called using word: wa
+Matched SUBJECT <<<<
+++++++++++++++++++++++++++++++++++++++++++
+Processing <afterSubject>
+
+.....Scanner was called...
+>>>>>Word is:toire
+passed: e
+passing by word1
+Scanner called using word: toire
+Matched WORD1 <<<<
+Reading lexicon.txt...
+Translator completed
+getCurrentLexeme(): toire
+lookUp Function: toire
+++++++++++++++++++++++++++++++++++++++++++
+Processing <afterNoun> 
+
+.....Scanner was called...
+>>>>>Word is:ni
+passed: i
+passing by word1
+Scanner called using word: ni
+Matched DESTINATION <<<<
+++++++++++++++++++++++++++++++++++++++++++
+Processing <afterDestination>
+++++++++++++++++++++++++++++++++++++++++++
+Processing <verb>
+
+.....Scanner was called...
+>>>>>Word is:ikI
+passed: I
+passing by word2
+Scanner called using word: ikI
+Matched WORD2    <<<<
+Reading lexicon.txt...
+Translator completed
+getCurrentLexeme(): ikI
+lookUp Function: ikI
+++++++++++++++++++++++++++++++++++++++++++
+Processing <afterVerb>
+++++++++++++++++++++++++++++++++++++++++++
+Processing <tense>
+
+.....Scanner was called...
+>>>>>Word is:mashita
+passed: a
+passing by word1
+Scanner called using word: mashita
+Matched VERBPAST <<<<
+
+.....Scanner was called...
+>>>>>Word is:.
+passing by period
+Scanner called using word: .
+Matched PERIOD <<<<
+------------------------------------
+       Reading Sentence: 8
+------------------------------------
+++++++++++++++++++++++++++++++++++++++++++
+Processing <sentenceS>
+
+.....Scanner was called...
+>>>>>Word is:rika
+passed: a
+passing by word1
+Scanner called using word: rika
+++++++++++++++++++++++++++++++++++++++++++
+Processing <noun>
+Matched WORD1 <<<<
+Reading lexicon.txt...
+Translator completed
+getCurrentLexeme(): rika
+lookUp Function: rika
+From lookUp: rika is not in the dictionary.
+
+.....Scanner was called...
+>>>>>Word is:wa
+passed: a
+passing by word1
+Scanner called using word: wa
+Matched SUBJECT <<<<
+++++++++++++++++++++++++++++++++++++++++++
+Processing <afterSubject>
+
+.....Scanner was called...
+>>>>>Word is:nakI
+passed: I
+passing by word2
+Scanner called using word: nakI
+Matched WORD2    <<<<
+Reading lexicon.txt...
+Translator completed
+getCurrentLexeme(): nakI
+lookUp Function: nakI
+++++++++++++++++++++++++++++++++++++++++++
+Processing <tense>
+
+.....Scanner was called...
+>>>>>Word is:mashita
+passed: a
+passing by word1
+Scanner called using word: mashita
+Matched VERBPAST <<<<
+
+.....Scanner was called...
+>>>>>Word is:.
+passing by period
+Scanner called using word: .
+Matched PERIOD <<<<
+------------------------------------
+       Reading Sentence: 9
+------------------------------------
+++++++++++++++++++++++++++++++++++++++++++
+Processing <sentenceS>
+
+.....Scanner was called...
+>>>>>Word is:eofm
+Reached the end of the file….
+Scanner called using word: eofm
+successfully parsed <story>!
+The End
+]0;patla001@empress:~/cs/CS421Progs/Github/CS421/translator/ezer[patla001@empress ezer]$ cat outputTranslator.txt 
+ACTOR: I/me
+DESCRIPTION: rika
+TENSE: IS
+
+ACTOR: I/me
+DESCRIPTION: teacher
+TENSE: IS
+
+ACTOR: rika
+OBJECT: meal
+ACTION: eat
+TENSE: VERB
+
+ACTOR: I/me
+OBJECT: test
+TO: student
+ACTION: give
+TENSE: VERBPAST
+
+CONNECTOR: However
+ACTOR: student
+ACTION: enjoy
+TENSE: VERBPASTNEG
+
+CONNECTOR: Therefore
+ACTOR: I/me
+DESCRIPTION: sad
+TENSE: WAS
+
+CONNECTOR: Then
+ACTOR: rika
+TO: restroom
+ACTION: go
+TENSE: VERBPAST
+
+ACTOR: rika
+ACTION: cry
+TENSE: VERBPAST
+
+]0;patla001@empress:~/cs/CS421Progs/Github/CS421/translator/ezer[patla001@empress ezer]$ cat outputTranslator.t[Kcat outputTranslator.t./single27translator.ou[C[C
+Enter the input file name: partCtest2
+------------------------------------
+       Reading Sentence: 1
+------------------------------------
+++++++++++++++++++++++++++++++++++++++++++
+Processing <sentenceS>
+
+.....Scanner was called...
+>>>>>Word is:soshite
+passed: e
+passing by word1
+Scanner called using word: soshite
+Matched CONNECTOR <<<<
+Reading lexicon.txt...
+Translator completed
+getCurrentLexeme(): soshite
+lookUp Function: soshite
+++++++++++++++++++++++++++++++++++++++++++
+Processing <noun>
+
+.....Scanner was called...
+>>>>>Word is:watashi
+passed: i
+passing by word1
+Scanner called using word: watashi
+Matched PRONOUN <<<<
+Reading lexicon.txt...
+Translator completed
+getCurrentLexeme(): watashi
+lookUp Function: watashi
+
+.....Scanner was called...
+>>>>>Word is:wa
+passed: a
+passing by word1
+Scanner called using word: wa
+Matched SUBJECT <<<<
+++++++++++++++++++++++++++++++++++++++++++
+Processing <afterSubject>
+
+.....Scanner was called...
+>>>>>Word is:rika
+passed: a
+passing by word1
+Scanner called using word: rika
+Matched WORD1 <<<<
+Reading lexicon.txt...
+Translator completed
+getCurrentLexeme(): rika
+lookUp Function: rika
+From lookUp: rika is not in the dictionary.
+++++++++++++++++++++++++++++++++++++++++++
+Processing <afterNoun> 
+
+.....Scanner was called...
+>>>>>Word is:desu
+passed: u
+passing by word1
+Scanner called using word: desu
+Matched IS <<<<
+
+.....Scanner was called...
+>>>>>Word is:ne
+passed: e
+passing by word1
+Scanner called using word: ne
+SYNTAX ERROR: expected PERIOD but found ne!
+Terminate the Program
+]0;patla001@empress:~/cs/CS421Progs/Github/CS421/translator/ezer[patla001@empress ezer]$ cat outputTranslator.txt 
+CONNECTOR: Then
+ACTOR: I/me
+DESCRIPTION: rika
+TENSE: IS
+]0;patla001@empress:~/cs/CS421Progs/Github/CS421/translator/ezer[patla001@empress ezer]$ cat outputTranslator.t./single27translator.ou[C[C
+Enter the input file name: partCtest3
+------------------------------------
+       Reading Sentence: 1
+------------------------------------
+++++++++++++++++++++++++++++++++++++++++++
+Processing <sentenceS>
+
+.....Scanner was called...
+>>>>>Word is:dakara
+passed: a
+passing by word1
+Scanner called using word: dakara
+Matched CONNECTOR <<<<
+Reading lexicon.txt...
+Translator completed
+getCurrentLexeme(): dakara
+lookUp Function: dakara
+++++++++++++++++++++++++++++++++++++++++++
+Processing <noun>
+
+.....Scanner was called...
+>>>>>Word is:watashi
+passed: i
+passing by word1
+Scanner called using word: watashi
+Matched PRONOUN <<<<
+Reading lexicon.txt...
+Translator completed
+getCurrentLexeme(): watashi
+lookUp Function: watashi
+
+.....Scanner was called...
+>>>>>Word is:de
+passed: e
+passing by word1
+Scanner called using word: de
+SYNTAX ERROR: expected SUBJECT but found de!
+Terminate the Program
+]0;patla001@empress:~/cs/CS421Progs/Github/CS421/translator/ezer[patla001@empress ezer]$ ./single27translator.ocat outputTranslator.tx[C[C
+CONNECTOR: Therefore
+]0;patla001@empress:~/cs/CS421Progs/Github/CS421/translator/ezer[patla001@empress ezer]$ cat outputTranslator.t./single27translator.ou[C[C
+Enter the input file name: partCtest4
+------------------------------------
+       Reading Sentence: 1
+------------------------------------
+++++++++++++++++++++++++++++++++++++++++++
+Processing <sentenceS>
+
+.....Scanner was called...
+>>>>>Word is:watashi
+passed: i
+passing by word1
+Scanner called using word: watashi
+++++++++++++++++++++++++++++++++++++++++++
+Processing <noun>
+Matched PRONOUN <<<<
+Reading lexicon.txt...
+Translator completed
+getCurrentLexeme(): watashi
+lookUp Function: watashi
+
+.....Scanner was called...
+>>>>>Word is:wa
+passed: a
+passing by word1
+Scanner called using word: wa
+Matched SUBJECT <<<<
+++++++++++++++++++++++++++++++++++++++++++
+Processing <afterSubject>
+
+.....Scanner was called...
+>>>>>Word is:rika
+passed: a
+passing by word1
+Scanner called using word: rika
+Matched WORD1 <<<<
+Reading lexicon.txt...
+Translator completed
+getCurrentLexeme(): rika
+lookUp Function: rika
+From lookUp: rika is not in the dictionary.
+++++++++++++++++++++++++++++++++++++++++++
+Processing <afterNoun> 
+
+.....Scanner was called...
+>>>>>Word is:mashita
+passed: a
+passing by word1
+Scanner called using word: mashita
+SYNTAX ERROR: unexpected mashita found in afterNoun!Terminate the Program
+]0;patla001@empress:~/cs/CS421Progs/Github/CS421/translator/ezer[patla001@empress ezer]$ ./single27translator.ocat outputTranslator.tx[C[C
+ACTOR: I/me
+]0;patla001@empress:~/cs/CS421Progs/Github/CS421/translator/ezer[patla001@empress ezer]$ cat outputTranslator.t./single27translator.ou[C[C
+Enter the input file name: partCtest5
+------------------------------------
+       Reading Sentence: 1
+------------------------------------
+++++++++++++++++++++++++++++++++++++++++++
+Processing <sentenceS>
+
+.....Scanner was called...
+>>>>>Word is:wa
+passed: a
+passing by word1
+Scanner called using word: wa
+++++++++++++++++++++++++++++++++++++++++++
+Processing <noun>
+SYNTAX ERROR: unexpected wa found in noun!Terminate the Program
+]0;patla001@empress:~/cs/CS421Progs/Github/CS421/translator/ezer[patla001@empress ezer]$ ./single27translator.ocat outputTranslator.tx[C[./single27translator.ou[C[cat outputTranslator.tx[C[C
+]0;patla001@empress:~/cs/CS421Progs/Github/CS421/translator/ezer[patla001@empress ezer]$ cat outputTranslator.t./single27translator.ou[C[cat outputTranslator.tx[C[./single27translator.ou[C[C
+Enter the input file name: partCtest6
+------------------------------------
+       Reading Sentence: 1
+------------------------------------
+++++++++++++++++++++++++++++++++++++++++++
+Processing <sentenceS>
+
+.....Scanner was called...
+>>>>>Word is:apple
+Lexical Error: This string is not in this language
+Scanner called using word: apple
+SYNTAX ERROR: expected ERROR but found apple!
+Terminate the Program
+]0;patla001@empress:~/cs/CS421Progs/Github/CS421/translator/ezer[patla001@empress ezer]$ ./single27translator.ocat outputTranslator.tx[C[C
+]0;patla001@empress:~/cs/CS421Progs/Github/CS421/translator/ezer[patla001@empress ezer]$ cat outputTranslator.t./single27translator.ou[C[C
+Enter the input file name: partCtest7
+------------------------------------
+       Reading Sentence: 1
+------------------------------------
+++++++++++++++++++++++++++++++++++++++++++
+Processing <sentenceS>
+
+.....Scanner was called...
+>>>>>Word is:
+Lexical Error: This string is not in this language
+Scanner called using word: 
+SYNTAX ERROR: expected ERROR but found !
+Terminate the Program
+]0;patla001@empress:~/cs/CS421Progs/Github/CS421/translator/ezer[patla001@empress ezer]$ ./single27translator.ocat outputTranslator.tx[C[C
+]0;patla001@empress:~/cs/CS421Progs/Github/CS421/translator/ezer[patla001@empress ezer]$ exit
+exit
+
+Script done on Thu 17 Dec 2020 05:00:46 PM PST
